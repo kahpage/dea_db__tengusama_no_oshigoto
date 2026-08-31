@@ -44,7 +44,7 @@ def retrieve_soup_fetch_if_needed(url: str) -> BeautifulSoup:
             )
         html_path.write_bytes(response.content)
     with html_path.open("rb") as f:
-        return BeautifulSoup(f, "lxml")
+        return BeautifulSoup(f, "html.parser")
 
 
 def sanitize_string(s: str) -> str:
@@ -56,14 +56,14 @@ def sanitize_string(s: str) -> str:
 def main():
     """Create circles.json"""
     print(f"Retrieving circles information for {NAME} ...")
-    raw_url = "https://web.archive.org/web/20100927042506id_/http://ketto.com/mimiken/alllist.cgi?91,%93V%8B%E7%97l%82%CC%82%A8%8Ed%8E%96"
+    raw_url = "http://web.archive.org/web/20110909153053id_/http://project-d.biz/eiyasho/circle-list.html"
     
     # Parse the HTML content to extract circle information
     soup = retrieve_soup_fetch_if_needed(raw_url)
     circles = []
 
     # table: with border=1
-    tables = soup.select('table[border="1"]')
+    tables = soup.select('table[border="0"]')
     
     for table in tables:
         table_rows = table.select("tr")
@@ -72,15 +72,17 @@ def main():
 
         for row in table_rows: 
                 cols = row.select("td")
-                if len(cols) < 5:
+                if len(cols) < 4:
                     print("Skipping row with insufficient columns:", row)
                     continue
 
-                circle_name = sanitize_string(cols[2].get_text())
+                circle_name = sanitize_string(cols[0].get_text())
                 if "サークル名" in circle_name:
                     continue  # Skip header row
-                pen_name = sanitize_string(cols[3].get_text())
-                position = sanitize_string(cols[4].get_text())
+                pen_name = sanitize_string(cols[1].get_text())
+                if not pen_name:
+                    continue  # Skip rows without pen name
+                position = sanitize_string(cols[3].get_text())
                 circle_links: list[str] = []
                 hp_tag = cols[2].select_one("a")
                 if hp_tag and hp_tag.has_attr("href"):
