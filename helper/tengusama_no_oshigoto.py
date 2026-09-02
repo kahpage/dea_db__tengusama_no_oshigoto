@@ -67,12 +67,12 @@ def retrieve_circles(event_name: str) -> list[Circle]:
 
 if __name__ == "__main__":
     events: list[Event] = []
-    active_events: list[int | str] = list(range(1, 14 + 1))
+    disabled_events: list[int | str] = []
 
     thwikicc = "https://thwiki.cc/%E5%A4%A9%E7%8B%97%E5%A4%A7%E4%BA%BA%E7%9A%84%E5%B7%A5%E4%BD%9C"
 
     i = 1  # ==== tengusama_no_oshigoto 1====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -137,7 +137,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 2  # ==== tengusama_no_oshigoto2 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -208,7 +208,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 3  # ==== tengusama_no_oshigoto3 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -270,7 +270,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 4  # ==== tengusama_no_oshigoto4 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -344,7 +344,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 5  # ==== tengusama_no_oshigoto5 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -409,7 +409,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 6  # ==== tengusama_no_oshigoto6 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -486,7 +486,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 7  # ==== tengusama_no_oshigoto7 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -554,7 +554,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 8  # ==== tengusama_no_oshigoto8 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -603,7 +603,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 9  # ==== tengusama_no_oshigoto9 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -653,7 +653,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 10  # ==== tengusama_no_oshigoto10 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -701,7 +701,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 11  # ==== tengusama_no_oshigoto11 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -749,7 +749,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 12  # ==== tengusama_no_oshigoto12 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -796,7 +796,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 13  # ==== tengusama_no_oshigoto13 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -843,7 +843,7 @@ if __name__ == "__main__":
         events.append(event)
 
     i = 14  # ==== tengusama_no_oshigoto14 ====
-    if i in active_events:
+    if i not in disabled_events:
         event_name = f"tengusama_no_oshigoto{i}"
         print(f"Processing {event_name} ...")
 
@@ -891,7 +891,7 @@ if __name__ == "__main__":
         events.append(event)
 
     # i =   # ==== tengusama_no_oshigoto ====
-    # if i in active_events:
+    # if i not in disabled_events:
     #     event_name = f"tengusama_no_oshigoto{i}"
     #     print(f"Processing {event_name} ...")
 
